@@ -11,6 +11,7 @@ void error() {
 	exit(1);
 }
 
+// ------- moves to the next charcter -----
 void match(int t) {
 	if (lookahead == t )
 		lookahead = getchar();
@@ -29,17 +30,18 @@ void term() {
 
 }
 
+// --------- reading all expresions ----------------------------------------------------------
 void rest() {
 	while (true) {
 		if (lookahead == '+') {
-			match(lookahead);
+			match('+');
 			term();
-			putchar(lookahead);
+			putchar('+');
 		}
 		else if (lookahead == '-') {
-			match(lookahead);
+			match('-');
 			term();
-			putchar(lookahead);
+			putchar('-');
 		}
 		else 
 			break;
